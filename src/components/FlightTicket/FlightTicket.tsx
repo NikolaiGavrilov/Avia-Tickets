@@ -1,7 +1,6 @@
 import React from "react";
 import "./FlightTicket.scss";
 
-
 interface TicketProps {
   origin: string;
   origin_name: string;
@@ -42,26 +41,39 @@ const FlightTicket: React.FC<TicketProps> = ({
         </button>
       </div>
       <div className="ticket-right">
-        <div className="ticket-info">
+        <div className="ticket-info ticket-grid-start-upper">
           <p className="ticket-time">{departure_time}</p>
+        </div>
+        <div className="ticket-grid-start-lower">
           <p className="ticket-place">
-            {origin}, ({origin_name})
+            {origin}, {origin_name}
           </p>
           <p className="ticket-date">{departure_date}</p>
         </div>
-        <div className="ticket-stops">
-          {stops > 0
-            ? `${stops} ${stops === 1 ? "пересадка" : "пересадки"}`
-            : null}
-
+        <div className="ticket-center ticket-grid-centre">
+          <p className="ticket-stops">
+            {stops > 0
+              ? `${stops} ${stops === 1 ? "пересадка" : "пересадки"}`
+              : null}
+          </p>
+          <div className="plane-flex">
+            <div className="plane-line"></div>
+            <img
+              className="plane-svg "
+              src="./../../src/assets/plane_svg.svg"
+              alt=""
+            ></img>
+          </div>
         </div>
-        <div className="ticket-info">
+        <div className="ticket-info ticket-grid-end-upper">
           <p className="ticket-time">{arrival_time}</p>
+          </div>
+          <div className="ticket-info ticket-grid-end-lower">
           <p className="ticket-place">
-            {destination}, ({destination_name})
+            {destination_name}, {destination}
           </p>
           <p className="ticket-date">{arrival_date}</p>
-        </div>
+          </div>
       </div>
     </div>
   );

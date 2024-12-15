@@ -3,13 +3,15 @@ import "./MainPage.scss";
 
 const MainPage = () => {
   return (
-    <div>
+    <div className="main-page">
+        <div className="content">
       <img
         className="plane-logo"
         src="./src/assets/plane-logo.png"
         alt="лого с самолетом"
       ></img>
-      <TicketList />
+      <TicketList/>
+      </div>
     </div>
   );
 };

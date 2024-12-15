@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import FlightTicket from "../FlightTicket/FlightTicket";
+import "./TicketList.scss";
 
 interface TicketData {
   origin: string;
@@ -50,11 +51,11 @@ const TicketList: React.FC = () => {
   }
 
   return (
-    <>
+    <div className="ticket-list">
       {tickets.map((ticket, index) => (
         <FlightTicket key={index} {...ticket} />
       ))}
-    </>
+    </div>
   );
 };
 
