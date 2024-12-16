@@ -67,13 +67,13 @@ const FlightTicket: React.FC<TicketProps> = ({
         </div>
         <div className="ticket-info ticket-grid-end-upper">
           <p className="ticket-time">{arrival_time}</p>
-          </div>
-          <div className="ticket-info ticket-grid-end-lower">
+        </div>
+        <div className="ticket-info ticket-grid-end-lower">
           <p className="ticket-place">
             {destination_name}, {destination}
           </p>
           <p className="ticket-date">{arrival_date}</p>
-          </div>
+        </div>
       </div>
     </div>
   );

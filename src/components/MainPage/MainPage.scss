@@ -8,6 +8,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  &-flex {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
 }
 .plane-logo {
   display: block;

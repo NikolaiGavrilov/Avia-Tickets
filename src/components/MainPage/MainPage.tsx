@@ -1,3 +1,4 @@
+import Filters from "../Filters/Filters";
 import TicketList from "../TicketsList/TicketList";
 import "./MainPage.scss";
 
@@ -10,7 +11,10 @@ const MainPage = () => {
         src="./src/assets/plane-logo.png"
         alt="лого с самолетом"
       ></img>
+      <div className="content-flex">
+      <Filters />
       <TicketList/>
+      </div>
       </div>
     </div>
   );

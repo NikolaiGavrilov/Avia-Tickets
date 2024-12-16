@@ -1,0 +1,42 @@
+.filters {
+  background-color: #fff;
+  padding: 20px 30px;
+  border-radius: 10px;
+  color: #666666;
+  max-height: fit-content;
+}
+
+.filters-text {
+  text-transform: uppercase;
+  color: #666666;
+  font-weight: 500;
+}
+
+.currency {
+  &-btn {
+    color: #2196f3;
+    border-color: #dbddde;
+
+    &:hover {
+      background-color: #f2fcff;
+      border-color: #2196f3;
+    }
+
+    &:focus {
+      background-color: #2196f3;
+      color: #fff;
+      border-color: #2196f3;
+      outline: none;
+    }
+  }
+
+  &-filters {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.stops-filters {
+  display: flex;
+  flex-direction: column;
+}
