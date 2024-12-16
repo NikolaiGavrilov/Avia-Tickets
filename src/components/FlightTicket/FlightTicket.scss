@@ -4,7 +4,7 @@
   flex-wrap: nowrap;
   background-color: #ffffff;
   border-radius: 10px;
-  box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.1);
 
   &-left {
     display: flex;
@@ -105,4 +105,15 @@
   background-color: #ff6d00;
   color: #ffffff;
   padding: 10px 40px;
+  width: 160px;
+  border: none;
+
+  &:hover {
+    background-color: #ff8124;
+    border: none;
+  }
+
+  &:focus {
+    outline: none;
+  }
 }

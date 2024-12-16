@@ -2,30 +2,34 @@
   background-color: #fff;
   padding: 20px 30px;
   border-radius: 10px;
-  color: #666666;
+  color: #959da0;
   max-height: fit-content;
+  box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.1);
 }
 
 .filters-text {
   text-transform: uppercase;
-  color: #666666;
   font-weight: 500;
 }
 
 .currency {
   &-btn {
+    width: 70px;
+    height: 50px;
     color: #2196f3;
-    border-color: #dbddde;
+    border: 2px solid #dbddde;
+    outline: none;
 
     &:hover {
       background-color: #f2fcff;
-      border-color: #2196f3;
+      border: 2px solid #2196f3;
+      outline: none;
     }
 
     &:focus {
       background-color: #2196f3;
       color: #fff;
-      border-color: #2196f3;
+      border: 2px solid #2196f3;
       outline: none;
     }
   }

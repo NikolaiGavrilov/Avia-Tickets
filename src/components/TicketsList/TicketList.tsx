@@ -15,7 +15,12 @@ interface TicketData {
   stops: number;
   price: number;
 }
-const TicketList: React.FC = () => {
+
+interface TicketListProps {
+  filterState: { stops: number[]; currency: "RUB" | "USD" | "EUR" };
+}
+
+const TicketList: React.FC<TicketListProps> = ({ filterState }) => {
   const [tickets, setTickets] = useState<TicketData[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -42,6 +47,21 @@ const TicketList: React.FC = () => {
     fetchData();
   }, []);
 
+  const filteredTickets = tickets.filter((ticket) => {
+    return (
+      filterState.stops.length === 0 || filterState.stops.includes(ticket.stops)
+    );
+  });
+
+  const sortedTickets = [...filteredTickets].sort((a, b) => a.price - b.price);
+
+  const convertPrice = (price: number, currency: "RUB" | "USD" | "EUR") => {
+    if (currency === "RUB") return price;
+    if (currency === "USD") return Math.round(price / 103);
+    if (currency === "EUR") return Math.round(price / 109);
+    return price;
+  };
+
   if (isLoading) {
     return <div>Загрузка список билетов...</div>;
   }
@@ -52,8 +72,13 @@ const TicketList: React.FC = () => {
 
   return (
     <div className="ticket-list">
-      {tickets.map((ticket, index) => (
-        <FlightTicket key={index} {...ticket} />
+      {sortedTickets.map((ticket, index) => (
+        <FlightTicket
+          key={index}
+          {...ticket}
+          currency={filterState.currency}
+          convertPrice={convertPrice}
+        />
       ))}
     </div>
   );

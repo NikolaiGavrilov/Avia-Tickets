@@ -1,50 +1,42 @@
-# React + TypeScript + Vite
+# Страница выдачи авиабилетов
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Информация о проекте
 
-Currently, two official plugins are available:
+В этом проекте я создал страницу выдачи билетов с фильтрами с использованием
+React + TypeScript. Данные билетов извлекаются из tickets.json, сортируются по
+возрастанию цены, фильтруются по валюте и количеству пересадок и отрисовываются.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+## Инструкции по сборке и запуску
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+1. Склонировать себе этот репозиторий
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```
+git clone https://github.com/NikolaiGavrilov/Avia-Tickets
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+2. Перейти в директорию
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+```
+cd Avia-Tickets
+```
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+3. Выполнить команду ниже для установки необходимых node_modules
+
+```
+npm i
+```
+
+4. Запустить сервер разработки, выполнив в терминале команду
+
+```
+npm run dev
+```
+
+5. Перейти на сайт, кликнув по появившейся в окне терминала ссылке левой кнопкой
+   мыши с зажатой клавишей Ctrl или скопировать следующую ссылку в адресную
+   строку в браузере и самостоятельно выполнить переход.
+
+```
+http://localhost:5173/
 ```

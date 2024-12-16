@@ -13,6 +13,8 @@ interface TicketProps {
   carrier: string;
   stops: number;
   price: number;
+  currency: "RUB" | "USD" | "EUR";
+  convertPrice: (price: number, currency: "RUB" | "USD" | "EUR") => number;
 }
 
 const FlightTicket: React.FC<TicketProps> = ({
@@ -27,17 +29,30 @@ const FlightTicket: React.FC<TicketProps> = ({
   carrier,
   stops,
   price,
+  currency,
+  convertPrice,
 }) => {
+  const pasteCurrencySymbol = () => {
+    switch (currency) {
+      case "RUB":
+        return "₽";
+      case "USD":
+        return "$";
+      case "EUR":
+        return "€";
+    }
+  };
   return (
     <div className="ticket">
       <div className="ticket-left">
         <img
           className="company-logo"
-          src="./../../src/assets/company-logo.jpg"
+          src="./../../src/assets/turkish-airlines-logo.png"
           alt="логотип авиалиний"
         ></img>
         <button className="buy-btn">
-          Купить<br></br> за {price}₽
+          Купить<br></br> за {convertPrice(price, currency)}
+          {pasteCurrencySymbol()}
         </button>
       </div>
       <div className="ticket-right">
