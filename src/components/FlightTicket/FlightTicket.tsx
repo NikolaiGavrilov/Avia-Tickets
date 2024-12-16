@@ -32,6 +32,7 @@ const FlightTicket: React.FC<TicketProps> = ({
   currency,
   convertPrice,
 }) => {
+
   const pasteCurrencySymbol = () => {
     switch (currency) {
       case "RUB":
@@ -40,14 +41,31 @@ const FlightTicket: React.FC<TicketProps> = ({
         return "$";
       case "EUR":
         return "€";
+        default:
+          return "";
     }
   };
+
+  const pasteCompanyLogoPath = () => {
+    switch (carrier) {
+      case "SU":
+        return "./../../src/assets/aeroflot-logo.png";
+      case "TK":
+        return "./../../src/assets/turkish-airlines-logo.png";
+      case "S7":
+        return "./../../src/assets/s7-airlines-logo.png";
+        case "BA":
+        return "./../../src/assets/british-airways-logo.png";
+        default:
+          return "";
+    }
+  }
   return (
     <div className="ticket">
       <div className="ticket-left">
         <img
           className="company-logo"
-          src="./../../src/assets/turkish-airlines-logo.png"
+          src={pasteCompanyLogoPath()}
           alt="логотип авиалиний"
         ></img>
         <button className="buy-btn">
@@ -56,7 +74,7 @@ const FlightTicket: React.FC<TicketProps> = ({
         </button>
       </div>
       <div className="ticket-right">
-        <div className="ticket-info ticket-grid-start-upper">
+        <div className="ticket-grid-start-upper">
           <p className="ticket-time">{departure_time}</p>
         </div>
         <div className="ticket-grid-start-lower">
@@ -80,10 +98,10 @@ const FlightTicket: React.FC<TicketProps> = ({
             ></img>
           </div>
         </div>
-        <div className="ticket-info ticket-grid-end-upper">
+        <div className="ticket-grid-end-upper">
           <p className="ticket-time">{arrival_time}</p>
         </div>
-        <div className="ticket-info ticket-grid-end-lower">
+        <div className="ticket-grid-end-lower">
           <p className="ticket-place">
             {destination_name}, {destination}
           </p>
