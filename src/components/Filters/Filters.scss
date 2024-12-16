@@ -1,51 +1,63 @@
 .filters {
-  background-color: #fff;
-  padding: 20px 30px;
-  border-radius: 10px;
-  color: #959da0;
-  max-height: fit-content;
-  box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.1);
-}
-
-.filters-text {
-  text-transform: uppercase;
-  font-weight: 500;
-}
-
-.currency {
-  &-btn {
-    width: 70px;
-    height: 50px;
-    color: #2196f3;
-    border: 2px solid #dbddde;
-    outline: none;
-
-    &:hover {
-      background-color: #f2fcff;
-      border: 2px solid #2196f3;
+    background-color: #fff;
+    padding: 20px 30px;
+    border-radius: 10px;
+    color: #959da0;
+    max-height: -webkit-fit-content;
+    max-height: -moz-fit-content;
+    max-height: fit-content;
+    -webkit-box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.1);
+            box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.1);
+  }
+  
+  .filters-text {
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  
+  .currency {
+    &-btn {
+      width: 70px;
+      height: 50px;
+      color: #2196f3;
+      border: 2px solid #dbddde;
       outline: none;
+  
+      &:hover {
+        background-color: #f2fcff;
+        border: 2px solid #2196f3;
+        outline: none;
+      }
+  
+      &:focus {
+        background-color: #2196f3;
+        color: #fff;
+        border: 2px solid #2196f3;
+        outline: none;
+      }
     }
-
-    &:focus {
-      background-color: #2196f3;
-      color: #fff;
-      border: 2px solid #2196f3;
-      outline: none;
+  
+    &-filters {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
     }
   }
-
-  &-filters {
+  
+  .stops-filters {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
-}
-
-.stops-filters {
-  display: flex;
-  flex-direction: column;
-}
-
-.stops-checkbox:hover {
-  background-color: #f1fcff;
-}
-
+  
+  .stops-checkbox:hover {
+    background-color: #f1fcff;
+  }
